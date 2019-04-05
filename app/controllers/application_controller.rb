@@ -6,7 +6,10 @@ class ApplicationController < Sinatra::Base
         enable :sessions
         set :sessions_secret, "tims_app"
     end
-
+    
+    get '/' do
+        "Hello World"
+    end
 
     helpers do
 
