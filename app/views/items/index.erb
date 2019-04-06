@@ -1,23 +1,54 @@
-<h1>TIMS</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TIMS: Tech Inventory Management System</title>
+        <style type="text/css">
 
-
-<h3>Here's a list of all your tech items:</h3>
-
-<ol>
-<% @items.each do |item| %>
-    <li>
-        <a href="/items/<%= item.id %>">
-            <%= item.name %>
-        </a>
+            body{
+                font-family: Arial, Verdana, sans-serif;
+                color: #111111;}
+            table {
+                width: 600px;}
+            th, td {
+                padding: 7px 10px 10px 10px;}
+            th {
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 90%;
+                border-bottom: 2px solid #111111;
+                border-top: 1px solid #999;
+                text-align: left;}
+            tr.even{
+                background-color: #efefef;}
+            tr:hover{
+                background-color: #c3e6e5;}
+        </style>
+    </head>
+    <body>
+        <h1><acronym title="Tech Inventory Management System">TIMS</acronym></h1>
+        <h3> Here's a list of all your tech devices: </h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Edit</th>
+            </tr>
+            <% @items.each do |item| %>
+                <tr>
+                    <td>
+                        <a href="/items/<%= item.id %>">
+                            <%= item.name %>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/items/<%=item.id%>/edit">Edit</a>
+                    </td>
+                </tr>
+            <% end %>
+        </table> 
         <br/>
-        <a href="/items/<%=item.id%>/edit">Edit</a>
-    </li>
-<% end %>
-</ol>
-
-<a href="/items/new">Add New Item</a>
-
-<br/>
-<br/>
-
-<a href="/logout">Logout</a>
+        <a href="/items/new">Add New Item</a>
+        <br/>
+        <br/>
+        <a href="/logout">Logout</a>
+    </body>
+</html>
