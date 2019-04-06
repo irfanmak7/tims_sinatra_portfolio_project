@@ -6,19 +6,29 @@ class ApplicationController < Sinatra::Base
         enable :sessions
         set :session_secret, "tims_app"
     end
+    get '/' do 
+        erb :index
+        #welcome
+    end
     
-
     helpers do
 
+        def redirect_if_not_logged_in
+            if !logged_in?
+              redirect "/login"
+            end
+        end
+      
         def logged_in?
-            !!session[:email]
+            !!session[:user_id]
         end
+      
+        def current_user
+            # User.find(session[:user_id])
+            @current_user ||= User.find_by(:user_id => session[:user_id]) if session[:user_id]
 
-        def login(email)
-            # Is the user who they claim to be
-            session[:email] = email
         end
-
+        
         def logout!
             session.clear
             redirect '/login'

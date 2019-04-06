@@ -1,0 +1,17 @@
+<h1>TIMS</h1>
+
+<h3>Item Information</h3>
+
+<p>Name: <%= @item.name %><br />
+<p>Serial Number: <%= @item.serial_number %> <br />
+
+<br />
+
+<form action="/items/<%= @item.id %>/delete" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn btn-primary btn-sm"   type="submit" value="Delete">
+</form>
+
+
+<a href="/items">Main List</a>
+

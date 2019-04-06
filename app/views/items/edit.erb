@@ -1,0 +1,21 @@
+<h1>TIMS</h1>
+
+<h3>Edit <%= @item.name %></h3>
+
+<form action="/items/<%=@item.id %>" method="POST">
+  <input type="hidden" name="_method" value="patch">
+    <label> Name: </label>
+    <input type="text" name="name" value="<%=@item.name %>"> </br>
+
+    <label> Serial Number: </label>
+    <input type="text" name="serial_number" value="<%=@item.serial_number %>"> </br>
+
+    <input type="submit">
+    <a href="/items"> Cancel</a>
+</form>
+
+<form action>
+<form action="/items/<%= @item.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn btn-primary btn-sm"   type="submit" value="Delete">
+</form>

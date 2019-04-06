@@ -1,0 +1,23 @@
+<h1>TIMS</h1>
+
+
+<h3>Here's a list of all you tech items:</h3>
+
+<ol>
+<% @items.each do |item| %>
+    <li>
+        <a href="/items/<%= item.id %>">
+            <%= item.name %>
+        </a>
+        <br/>
+        <a href="/items/<%=item.id%>/edit">Edit</a>
+    </li>
+<% end %>
+</ol>
+
+<a href="/items/new">Add New Item</a>
+
+<br/>
+<br/>
+
+<a href="/logout">Logout</a>

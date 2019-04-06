@@ -1,0 +1,8 @@
+<p> Here are your items, <%= @user.username %>
+<% @user.items.each do |item| %>
+  <ul>
+    <li><a href="/items/<%=item.id%>"><%= item.name %></a></li>
+  </ul>
+<% end %>
+
+
