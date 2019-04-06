@@ -2,7 +2,19 @@ A simple MVC Sinatra web application that stores a users tech devices. The app a
 
 INSTALLATION
 
-Fork and clone the Github Repo. Run "bundle" in Terminal, or the console, from within the directory. Then run "shotgun" and visit the host or address given to you in Terminal or the console.
+To run this app, open up terminal and enter:
+
+    git clone https://github.com/irfanmak7/tims_sinatra_portfolio_project.git
+    
+After it is cloned, change into the tims_sinatra_portfolio_project directory. From the directory, enter this in terminal:
+
+    bundle install
+    
+After it installs all the gems, enter this terminal:
+
+    shotgun
+    
+This will start up a local server and give you the local host address. Copy the address into you browser and you will be good to go.
 
 LICENSE
 
