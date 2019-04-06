@@ -16,6 +16,9 @@ After it installs all the gems, enter this terminal:
     
 This will start up a local server and give you the local host address. Copy the address into you browser and you will be good to go.
 
+CONTRIBUTING
+Bug reports and pull requests are welcome on GitHub at https://github.com/irfanmak7/tims_sinatra_portfolio_project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
 LICENSE
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
