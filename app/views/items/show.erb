@@ -1,17 +1,61 @@
-<h1>TIMS</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TIMS: Tech Inventory Management System</title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: -webkit-linear-gradient(top, #56ccf2, #2f80ed) no-repeat 50% 50% fixed;
+                background-size: cover;
+                font-family: Oswald, sans-serif;
+                color: #efefef;}
+            #nav {
+                background-color: #687587;
+                height: 35px;
+                text-align: center;}
+            li {
+                display: inline;
+                padding: 50px;}
+            #header {
+                text-align: center;}
+            #content {
+                text-align: center;
+                padding: 20px;}
+            a:link {
+                color: black;
+                text-decoration: none;}
+            a:visited {
+                color: black;
+                text-decoration: none;}
+            a:hover {
+                color: orange;}
+        </style>
+    </head>
 
-<h3>Item Information</h3>
+    <body>
+        <div id="header">
+            <h1>TIMS</h1>
+            <div id="nav">
+                <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
 
-<p>Name: <%= @item.name %><br />
-<p>Serial Number: <%= @item.serial_number %> <br />
+        <div id="content">
+            <h2>Item Information</h2>
+            <p>Name: <%= @item.name %></p>
+            <p>Serial Number: <%= @item.serial_number %></p>
+            <form action="/items/<%= @item.id %>/delete" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <p><input class="btn btn-primary btn-sm"   type="submit" value="Delete"></p>
+            </form>
+            <a href="/items">Main List</a>
 
-<br />
-
-<form action="/items/<%= @item.id %>/delete" method="post">
-    <input type="hidden" name="_method" value="DELETE">
-    <input class="btn btn-primary btn-sm"   type="submit" value="Delete">
-</form>
-
-
-<a href="/items">Main List</a>
-
+        </div>
+    </body>
+</html>

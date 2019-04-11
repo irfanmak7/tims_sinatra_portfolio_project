@@ -1,9 +1,68 @@
-<h1>Welcome To <acronym title="Tech Inventory Management System">TIMS</acronym>!</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TIMS: Tech Inventory Management System</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: -webkit-linear-gradient(top, #56ccf2, #2f80ed) no-repeat 50% 50% fixed;
+        background-size: cover;
+        font-family: Oswald, sans-serif;
+        color: #efefef;}
+      #nav {
+        background-color: #687587;
+        height: 35px;
+        text-align: center;}
+      li {
+        display: inline;
+        padding: 50px;}
+      #header {
+        text-align: center;}
+      #content {
+        text-align: center;}
+      a:link {
+        color: black;
+        text-decoration: none;}
+      a:visited {
+        color: black;
+        text-decoration: none;}
+      a:hover {
+        color: orange;}
+      input[type=text] {
+        width: 40%;
+        padding: 12px 20px;
+        box-sizing: border-box;}
+      input[type=email] {
+        width: 40%;
+        padding: 12px 20px;
+        box-sizing: border-box;}
 
-<h2>Sign Up</h2>
-<form action="/signup" method="POST">
-  <p><input type="text" name="name" placeholder="Name:"></p>
-    <p><input type="text" name="email" placeholder="Email:"></p>
-  <p><input type="text" name="password" placeholder="Password:"></p>
-  <p><input class="btn btn-primary" type="submit"> or <a href="/login">Login</a></p>
-</form>
+    </style>
+  <head>
+
+  <body>
+    <div id="header">
+      <h1>TIMS</h1>
+      <div id="nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <h2>Sign Up</h2>
+      <form action="/signup" method="POST">
+        <p><input type="text" name="name" placeholder="Name:"></p>
+        <p><input type="email" name="email" placeholder="Email:"></p>
+        <p><input type="text" name="password" placeholder="Password:"></p>
+        <p><input class="btn btn-primary" type="submit"> or <a href="/login">Login</a></p>
+      </form>
+
+    </div>
+  </body>
+</html>

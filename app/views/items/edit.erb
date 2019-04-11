@@ -1,17 +1,66 @@
-<h1>TIMS</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TIMS: Tech Inventory Management System</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: -webkit-linear-gradient(top, #56ccf2, #2f80ed) no-repeat 50% 50% fixed;
+        background-size: cover;
+        font-family: Oswald, sans-serif;
+        color: #efefef;}
+      #nav {
+        background-color: #687587;
+        height: 35px;
+        text-align: center;}
+      li {
+        display: inline;
+        padding: 50px;}
+      #header {
+        text-align: center;}
+      #content {
+        text-align: center;
+        padding: 20px;}
+      a:link {
+        color: black;
+        text-decoration: none;}
+      a:visited {
+        color: black;
+        text-decoration: none;}
+      a:hover {
+        color: orange;}
+      input[type=text]{
+        width: 40%;
+        padding: 12px 20px;
+        box-sizing: border-box;}
+    </style>
+  <body>
+    <div id="header">
+      <h1>TIMS</h1>
+        <div id="nav">
+          <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/signup">Signup</a></li>
+          <li><a href="/login">Login</a></li>
+          </ul>
+        </div>
+    </div>
 
-<h3>Edit <%= @item.name %></h3>
+    <div id="content">
+      <h3>Edit <%= @item.name %></h3>
+      <form action="/items/<%=@item.id %>" method="POST">
+        <input type="hidden" name="_method" value="patch">
+          <label> Name: </label>
+          <p><input type="text" name="name" value="<%=@item.name %>"> </p>
 
-<form action="/items/<%=@item.id %>" method="POST">
-  <input type="hidden" name="_method" value="patch">
-    <label> Name: </label>
-    <input type="text" name="name" value="<%=@item.name %>"> </br>
+          <label> Serial Number: </label>
+          <p><input type="text" name="serial_number" value="<%=@item.serial_number %>"> </p>
 
-    <label> Serial Number: </label>
-    <input type="text" name="serial_number" value="<%=@item.serial_number %>"> </br>
-
-    <input type="submit">
-    <a href="/items"> Cancel</a>
-</form>
-
-
+          <p><input type="submit"></p>
+          <p><a href="/items"> Cancel</a></p>
+      </form>
+    </div>
+  </body>
+</html>
